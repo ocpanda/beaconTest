@@ -220,7 +220,6 @@ public class BLECentralPlugin extends CordovaPlugin implements BluetoothAdapter.
             }
 
         } else if (action.equals(SETTINGS)) {
-
             Intent intent = new Intent(Settings.ACTION_BLUETOOTH_SETTINGS);
             cordova.getActivity().startActivity(intent);
             callbackContext.success();

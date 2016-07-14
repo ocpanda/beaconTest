@@ -18,6 +18,9 @@
     <feature name="BLE">
         <param name="ios-package" onload="true" value="BLECentralPlugin" />
     </feature>
+    <feature name="cordova-plugin-beacon">
+        <param name="ios-package" value="SimpleXpBeaconPlugin" />
+    </feature>
     <name>beacon</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

@@ -4,7 +4,13 @@
         "uninstalled": []
     },
     "config_munge": {
-        "files": {}
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": []
+                }
+            }
+        }
     },
     "installed_plugins": {
         "cordova-plugin-compat": {
@@ -14,6 +20,9 @@
             "PACKAGE_NAME": "com.ocpanda.test"
         },
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ocpanda.test"
+        },
+        "cordova-plugin-beacon": {
             "PACKAGE_NAME": "com.ocpanda.test"
         }
     },
@@ -34,11 +43,20 @@
             "merges": [
                 "ble"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-beacon/www/client.js",
+            "id": "cordova-plugin-beacon.client",
+            "pluginId": "cordova-plugin-beacon",
+            "clobbers": [
+                "cordova.plugins.simplexpbeacon"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-compat": "1.0.0",
         "cordova-plugin-ble-central": "1.1.1",
-        "cordova-plugin-whitelist": "1.2.2"
+        "cordova-plugin-whitelist": "1.2.2",
+        "cordova-plugin-beacon": "1.1.0"
     }
 }

@@ -11,6 +11,10 @@
                         {
                             "xml": "<feature name=\"BLE\"><param name=\"android-package\" value=\"com.megster.cordova.ble.central.BLECentralPlugin\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"cordova-plugin-beacon\"><param name=\"android-package\" value=\"com.blackberry.community.SimpleXpBeaconPlugin\" /></feature>",
+                            "count": 1
                         }
                     ],
                     "/*": [
@@ -30,11 +34,11 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH\" />",
-                            "count": 1
+                            "count": 2
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH_ADMIN\" />",
-                            "count": 1
+                            "count": 2
                         }
                     ]
                 }
@@ -50,6 +54,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ocpanda.test"
+        },
+        "cordova-plugin-beacon": {
+            "PACKAGE_NAME": "com.ocpanda.test"
         }
     },
     "dependent_plugins": {},
@@ -60,11 +67,19 @@
             "clobbers": [
                 "ble"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-beacon/www/client.js",
+            "id": "cordova-plugin-beacon.client",
+            "clobbers": [
+                "cordova.plugins.simplexpbeacon"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-compat": "1.0.0",
         "cordova-plugin-ble-central": "1.1.1",
-        "cordova-plugin-whitelist": "1.2.2"
+        "cordova-plugin-whitelist": "1.2.2",
+        "cordova-plugin-beacon": "1.1.0"
     }
 }

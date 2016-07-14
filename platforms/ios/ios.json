@@ -11,8 +11,13 @@
                         {
                             "xml": "<feature name=\"BLE\"><param name=\"ios-package\" onload=\"true\" value=\"BLECentralPlugin\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"cordova-plugin-beacon\"><param name=\"ios-package\" value=\"SimpleXpBeaconPlugin\" /></feature>",
+                            "count": 1
                         }
-                    ]
+                    ],
+                    "/*": []
                 }
             }
         }
@@ -26,6 +31,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ocpanda.test"
+        },
+        "cordova-plugin-beacon": {
+            "PACKAGE_NAME": "com.ocpanda.test"
         }
     },
     "dependent_plugins": {},
@@ -37,11 +45,20 @@
             "clobbers": [
                 "ble"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-beacon/www/client.js",
+            "id": "cordova-plugin-beacon.client",
+            "pluginId": "cordova-plugin-beacon",
+            "clobbers": [
+                "cordova.plugins.simplexpbeacon"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-compat": "1.0.0",
         "cordova-plugin-ble-central": "1.1.1",
-        "cordova-plugin-whitelist": "1.2.2"
+        "cordova-plugin-whitelist": "1.2.2",
+        "cordova-plugin-beacon": "1.1.0"
     }
 }

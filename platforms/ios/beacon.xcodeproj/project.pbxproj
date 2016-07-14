@@ -19,6 +19,7 @@
 		8BC4D312148444A1823F52C1 /* CBPeripheral+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A59465C5F94CE1A5881D99 /* CBPeripheral+Extensions.m */; };
 		0FA213CF1AD74722A7F56318 /* BLECommandContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBD0AA05BEE4D22B8A30EF6 /* BLECommandContext.m */; };
 		D9D6E4A8725846549ADB9A7E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9F3C899CB548AE94B5F49B /* CoreBluetooth.framework */; };
+		944605820B6C47CC8ED44C8F /* SimpleXpBeaconPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C3C94B47EF405199F1AA3E /* SimpleXpBeaconPlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		42B343174B424CA5A5C553CB /* CBPeripheral+Extensions.h */ = {isa = PBXFileReference; name = "CBPeripheral+Extensions.h"; path = "cordova-plugin-ble-central/BLECentralPlugin/CBPeripheral+Extensions.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		46694F98948A462BBF91988F /* BLECommandContext.h */ = {isa = PBXFileReference; name = "BLECommandContext.h"; path = "cordova-plugin-ble-central/BLECentralPlugin/BLECommandContext.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		2C9F3C899CB548AE94B5F49B /* CoreBluetooth.framework */ = {isa = PBXFileReference; name = "CoreBluetooth.framework"; path = "System/Library/Frameworks/CoreBluetooth.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		E3C3C94B47EF405199F1AA3E /* SimpleXpBeaconPlugin.m */ = {isa = PBXFileReference; name = "SimpleXpBeaconPlugin.m"; path = "cordova-plugin-beacon/SimpleXpBeaconPlugin/SimpleXpBeaconPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		6B113EEBE7204992A4103332 /* SimpleXpBeaconPlugin.h */ = {isa = PBXFileReference; name = "SimpleXpBeaconPlugin.h"; path = "cordova-plugin-beacon/SimpleXpBeaconPlugin/SimpleXpBeaconPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +178,8 @@
 				B0FAC4263D9B4F75BE5DC2E7 /* BLECentralPlugin.h */,
 				42B343174B424CA5A5C553CB /* CBPeripheral+Extensions.h */,
 				46694F98948A462BBF91988F /* BLECommandContext.h */,
+				E3C3C94B47EF405199F1AA3E /* SimpleXpBeaconPlugin.m */,
+				6B113EEBE7204992A4103332 /* SimpleXpBeaconPlugin.h */,
 			);
 			name = Plugins;
 			path = "beacon/Plugins";
@@ -292,6 +297,7 @@
 				6A3337116CAF4B58B15A5E9B /* BLECentralPlugin.m in Sources */,
 				8BC4D312148444A1823F52C1 /* CBPeripheral+Extensions.m in Sources */,
 				0FA213CF1AD74722A7F56318 /* BLECommandContext.m in Sources */,
+				944605820B6C47CC8ED44C8F /* SimpleXpBeaconPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

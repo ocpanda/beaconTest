@@ -15,6 +15,14 @@ module.exports = [
         "merges": [
             "ble"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-beacon/www/client.js",
+        "id": "cordova-plugin-beacon.client",
+        "pluginId": "cordova-plugin-beacon",
+        "clobbers": [
+            "cordova.plugins.simplexpbeacon"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -22,7 +30,8 @@ module.exports.metadata =
 {
     "cordova-plugin-compat": "1.0.0",
     "cordova-plugin-ble-central": "1.1.1",
-    "cordova-plugin-whitelist": "1.2.2"
+    "cordova-plugin-whitelist": "1.2.2",
+    "cordova-plugin-beacon": "1.1.0"
 }
 // BOTTOM OF METADATA
 });

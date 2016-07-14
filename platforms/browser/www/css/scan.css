@@ -1,0 +1,15 @@
+.btn0{
+	float: left;
+	position: absolute;
+	height: 40px;
+	width: 100%;
+}
+
+.btn0 a:hover{
+	text-decoration: none;
+}
+
+div .table{
+	position: absolute;
+	top: 100px;
+}

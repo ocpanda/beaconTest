@@ -22,5 +22,13 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-beacon": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-beacon"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
