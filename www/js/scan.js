@@ -1,3 +1,4 @@
+var dataNum = 0;
 var scanapp = {
 	goScan: function(){
 		this.bindEvents();
