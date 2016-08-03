@@ -15,6 +15,14 @@ module.exports = [
         "clobbers": [
             "cordova.plugins.simplexpbeacon"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-bluetoothle/www/bluetoothle.js",
+        "id": "cordova-plugin-bluetoothle.BluetoothLe",
+        "pluginId": "cordova-plugin-bluetoothle",
+        "clobbers": [
+            "window.bluetoothle"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -23,7 +31,8 @@ module.exports.metadata =
     "cordova-plugin-compat": "1.0.0",
     "cordova-plugin-ble-central": "1.1.1",
     "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-beacon": "1.1.0"
+    "cordova-plugin-beacon": "1.1.0",
+    "cordova-plugin-bluetoothle": "4.2.1"
 }
 // BOTTOM OF METADATA
 });

@@ -21,6 +21,10 @@
                         {
                             "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"BluetoothLePlugin\"><param name=\"android-package\" value=\"com.randdusing.bluetoothle.BluetoothLePlugin\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -30,15 +34,15 @@
                     "/manifest": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
-                            "count": 1
+                            "count": 2
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH\" />",
-                            "count": 2
+                            "count": 3
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH_ADMIN\" />",
-                            "count": 2
+                            "count": 3
                         }
                     ]
                 }
@@ -57,6 +61,9 @@
         },
         "cordova-plugin-beacon": {
             "PACKAGE_NAME": "com.ocpanda.test"
+        },
+        "cordova-plugin-bluetoothle": {
+            "PACKAGE_NAME": "com.ocpanda.test"
         }
     },
     "dependent_plugins": {},
@@ -74,12 +81,20 @@
             "clobbers": [
                 "cordova.plugins.simplexpbeacon"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-bluetoothle/www/bluetoothle.js",
+            "id": "cordova-plugin-bluetoothle.BluetoothLe",
+            "clobbers": [
+                "window.bluetoothle"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-compat": "1.0.0",
         "cordova-plugin-ble-central": "1.1.1",
         "cordova-plugin-whitelist": "1.2.2",
-        "cordova-plugin-beacon": "1.1.0"
+        "cordova-plugin-beacon": "1.1.0",
+        "cordova-plugin-bluetoothle": "4.2.1"
     }
 }

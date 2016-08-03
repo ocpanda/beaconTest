@@ -15,6 +15,9 @@
         },
         "cordova-plugin-beacon": {
             "PACKAGE_NAME": "com.ocpanda.test"
+        },
+        "cordova-plugin-bluetoothle": {
+            "PACKAGE_NAME": "com.ocpanda.test"
         }
     },
     "dependent_plugins": {
