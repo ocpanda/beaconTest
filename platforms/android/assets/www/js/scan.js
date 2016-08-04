@@ -1,4 +1,45 @@
+/**
+ * Beacon data storage class
+ * use for local storage
+ * call this class to put your data into local storage
+ */
+function BeaconDataStorage(){
+	this.dataStorage = window.localStorage;
+}
+
+BeaconDataStorage.prototype.getData = function(key){
+	return this.dataStorage.getItem(key);
+}
+
+BeaconDataStorage.prototype.setData = function(key, item){
+	this.dataStorage.setItem(key, item);
+}
+
+BeaconDataStorage.prototype.removeData = function(key){
+	this.dataStorage.removeItem(key);
+}
+
+BeaconDataStorage.prototype.clearData = function(){
+	this.dataStorage.clear();
+}
+/**
+ * Beacon data storage class
+ */
+
+/**
+ * Beacon data property
+ */
+function BeaconDataProperty(UUID, name, rssi){
+	this.UUID = UUID;
+	this.name = name;
+	this.rssi = rssi;
+}
+/**
+ * Beacon data property
+ */
+
 var dataNum = 0;
+var beaconDataStorage = new BeaconDataStorage();
 var scanapp = {
 	goScan: function(){
 		this.bindEvents();
@@ -14,27 +55,36 @@ var scanapp = {
 		var scanBtn = document.getElementById("scanBtn");
 		scanBtn.addEventListener('click', this.deviceScan, false);
 		//stop scan listener button DOM id=stopScanBtn
-		var stopScanBtn = document.getElementById("stopScanBtn");
-		stopScanBtn.addEventListener('click', this.deviceStopScan, false);
+		//var stopScanBtn = document.getElementById("stopScanBtn");
+		//stopScanBtn.addEventListener('click', this.deviceStopScan, false);
 	},
 
 	deviceScan: function(){
+		var scanSeconds = 5;
+
 		console.log("scanning!");
 		ble.startScan([], function(device){
 			console.log("here is scan device!");
 			//document.body.removeChild(document.getElementById("error"));
 			var obj = JSON.parse(JSON.stringify(device));
-			console.log(obj);	
-			var dataBody = document.getElementById("scanData");
+			console.log(obj);
+			//beaconDataStorage.setData(beaconData.UUID, beaconData);
+			var beaconData = new BeaconDataProperty(obj.id.toString(), obj.name.toString(), obj.rssi.toString());
+			$("#scanData").append("<tr>"+
+						"<th>"+beaconData.name+"</th>"+
+						"<th>"+beaconData.UUID+"</th>"+
+						"<th>"+beaconData.rssi+"</tr>");
+			/*var dataBody = document.getElementById("scanData");
 			var dataTr = document.createElement("tr");
 			var dataId = document.createElement("th");
-			var dataName = document.createElement("th");
+			var dataNameame = document.createElement("th");
 			var dataUUID = document.createElement("th");
 			var dataRSSI = document.createElement("th");
 			var dataIdText  = document.createTextNode((dataNum+1));
-			var dataNameText = document.createTextNode(obj.name.toString());
-			var dataUUIDText = document.createTextNode(obj.id.toString());
-			var dataRSSIText = document.createElement(obj.rssi.toString());
+			var dataNameText = document.createTextNode(beaconData.name);
+			var dataUUIDText = document.createTextNode(beaconData.UUID);
+			var dataRSSIText = document.createTextNode(beaconData.rssi);
+			console.log(beaconDataStorage.getData(beaconData.UUID));
 			dataId.appendChild(dataIdText);
 			dataName.appendChild(dataNameText);
 			dataUUID.appendChild(dataUUIDText);
@@ -43,7 +93,7 @@ var scanapp = {
 			dataTr.appendChild(dataName);
 			dataTr.appendChild(dataUUID);
 			dataTr.appendChild(dataRSSI);
-			dataBody.appendChild(dataTr);
+			dataBody.appendChild(dataTr);*/
 		},function(reason){
 			console.log("doesn't scan devices!");
 			console.log(reason);
@@ -54,20 +104,20 @@ var scanapp = {
 			document.body.appendChild(errorBody);
 		});
 
-		/*setTimeout(ble.stopScan, scanSeconds*1000,
+		setTimeout(ble.stopScan, scanSeconds*1000,
 			function(){
 				console.log("Scan complete");
 			},
 			function(){
 				console.log("stopScan faild");
-			});*/
+			});
 	},
 
-	deviceStopScan: function(){
+	/*deviceStopScan: function(){
 		console.log("stop scan!");
 		ble.stopScan(
 			function(){console.log("stop scan!");},
 			function(){console.log("stop scan faild!");});
-	}
+	}*/
 }
 scanapp.goScan();
