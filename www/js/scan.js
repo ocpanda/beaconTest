@@ -40,6 +40,7 @@ function BeaconDataProperty(UUID, name, rssi){
 
 var dataNum = 0;
 var beaconDataStorage = new BeaconDataStorage();
+var foundDevices = [];
 var scanapp = {
 	goScan: function(){
 		this.bindEvents();
@@ -61,16 +62,41 @@ var scanapp = {
 
 	deviceScan: function(){
 		var scanSeconds = 5;
-
+		foundDevices = [];
 		console.log("scanning!");
-		ble.startScan([], function(device){
+
+		bluetoothle.startScan(
+			function(result){
+				console.log("scan status "+result.status);
+				if (result.status === "scanStarted") {
+			        console.log("Scanning for devices");
+			    }
+			    else if (result.status === "scanResult") {
+			        if (!foundDevices.some(function (device) {
+			            return device.address === result.address;
+			        })) {
+			            console.log("FOUND DEVICE:");
+			            console.log(result);
+			            $("#scanData").append("<tr>"+
+							"<th>"+  (dataNum+1)  +"</th>"+
+							"<th>"+result.name+"</th>"+
+							"<th>"+result.address+"</th>"+
+							"<th>"+result.rssi+"</tr>");
+			        }
+			    }
+			},
+			function(error){},{services: []});
+
+		setTimeout(bluetoothle.stopScan, scanSeconds*1000, function(result){},function(error){});
+		/*ble.startScan([], function(device){
 			console.log("here is scan device!");
 			//document.body.removeChild(document.getElementById("error"));
 			var obj = JSON.parse(JSON.stringify(device));
 			console.log(obj);
-			//beaconDataStorage.setData(beaconData.UUID, beaconData);
 			var beaconData = new BeaconDataProperty(obj.id.toString(), obj.name.toString(), obj.rssi.toString());
+			//beaconDataStorage.setData(beaconData.UUID, beaconData);
 			$("#scanData").append("<tr>"+
+						"<th>"+  (dataNum+1)  +"</th>"+
 						"<th>"+beaconData.name+"</th>"+
 						"<th>"+beaconData.UUID+"</th>"+
 						"<th>"+beaconData.rssi+"</tr>");
@@ -78,20 +104,16 @@ var scanapp = {
 		},function(reason){
 			console.log("doesn't scan devices!");
 			console.log(reason);
-			var errorBody = document.createElement("p");
-			errorBody.id = "error";
-			var errorBodyText = document.createTextNode("Beacon scan faild "+reason);
-			errorBody.appendChild(errorBodyText);
-			document.body.appendChild(errorBody);
-		});
+			$(document.body).append("<p id='error'>scan faild!</p>");
+		});*/
 
-		setTimeout(ble.stopScan, scanSeconds*1000,
+		/*setTimeout(ble.stopScan, scanSeconds*1000,
 			function(){
 				console.log("Scan complete");
 			},
 			function(){
 				console.log("stopScan faild");
-			});
+			});*/
 	},
 
 	/*deviceStopScan: function(){
