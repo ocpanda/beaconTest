@@ -26,17 +26,7 @@ BeaconDataStorage.prototype.clearData = function(){
  * Beacon data storage class
  */
 
-/**
- * Beacon data property
- */
-function BeaconDataProperty(UUID, name, rssi){
-	this.UUID = UUID;
-	this.name = name;
-	this.rssi = rssi;
-}
-/**
- * Beacon data property
- */
+
 
 var dataNum = 0;
 var beaconDataStorage = new BeaconDataStorage();
@@ -76,18 +66,30 @@ var scanapp = {
 			            return device.address === result.address;
 			        })) {
 			            console.log("FOUND DEVICE:");
-			            console.log(result);
-			            $("#scanData").append("<tr>"+
-							"<th>"+  (dataNum+1)  +"</th>"+
-							"<th>"+result.name+"</th>"+
-							"<th>"+result.address+"</th>"+
-							"<th>"+result.rssi+"</tr>");
+			            var name = new Array();
+			            var name = result.name.toString().split(" ");
+			            console.log(name[0]);
+			            console.log($("#my"+name[0]).length);
+			            if($("#my"+name[0]).length === 0){
+				            $("#scanData").append("<tr id=my"+name[0]+">"+
+								"<th class='beaconName'>"+result.name+"</th>"+
+								"<th class='beaconUUID'>"+result.address+"</th>"+
+								"<th class='beaconRSSI'>"+result.rssi+"</th>"+"</tr>");
+				            console.log("dataNum: "+dataNum);
+				            console.log($("#my"+name[0]).length);
+				        }
+				        else{
+				        	console.log("change rssi");
+				        	$("#my"+name[0]+" .beaconRSSI").html(result.rssi);
+				        }
 			        }
+			        dataNum+=1;
 			    }
 			},
 			function(error){},{services: []});
 
 		setTimeout(bluetoothle.stopScan, scanSeconds*1000, function(result){},function(error){});
+		
 		/*ble.startScan([], function(device){
 			console.log("here is scan device!");
 			//document.body.removeChild(document.getElementById("error"));
@@ -114,7 +116,7 @@ var scanapp = {
 			function(){
 				console.log("stopScan faild");
 			});*/
-	},
+	}
 
 	/*deviceStopScan: function(){
 		console.log("stop scan!");
