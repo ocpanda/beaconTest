@@ -15,11 +15,11 @@
         <param name="ios-package" value="CDVGestureHandler" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="BLE">
-        <param name="ios-package" onload="true" value="BLECentralPlugin" />
+    <feature name="BluetoothLePlugin">
+        <param name="ios-package" value="BluetoothLePlugin" />
     </feature>
-    <feature name="cordova-plugin-beacon">
-        <param name="ios-package" value="SimpleXpBeaconPlugin" />
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
     </feature>
     <name>beacon</name>
     <description>
@@ -51,7 +51,4 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
-    <feature name="BluetoothLePlugin">
-        <param name="ios-package" value="BluetoothLePlugin" />
-    </feature>
 </widget>

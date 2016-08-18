@@ -26,9 +26,12 @@ BeaconDataStorage.prototype.clearData = function(){
  * Beacon data storage class
  */
 
+
+
 var dataNum = 0;
 var beaconDataStorage = new BeaconDataStorage();
 var foundDevices = [];
+var temp1;
 var scanapp = {
 	goScan: function(){
 		this.bindEvents();
@@ -64,27 +67,51 @@ var scanapp = {
 			            return device.address === result.address;
 			        })) {
 			            console.log("FOUND DEVICE:");
-			            console.log($("#scanData").length);
-			            console.log($("#my"+result.address).length);
-			            if($("#"+result.address).length === 0){
-				            $("#scanData").append("<tr id=my"+result.address+">"+
-								"<th id='beaconName'>"+result.name+"</th>"+
-								"<th id='beaconUUID'>"+result.address+"</th>"+
-								"<th id='beaconRSSI'>"+result.rssi+"</th>"+"</tr>");
+			            var name = new Array();
+			            var name = result.name.toString().split(" ");
+			            console.log(name[0]);
+			            console.log($("#my"+name[0]).length);
+			            if($("#my"+name[0]).length === 0){
+				            $("#scanData").append("<tr id=my"+name[0]+">"+
+								"<th class='beaconName'>"+result.name+"</th>"+
+								"<th class='beaconUUID'>"+result.address+"</th>"+
+								"<th class='beaconRSSI'>"+result.rssi+"</th>"+"</tr>");
 				            console.log("dataNum: "+dataNum);
-				            console.log($("#my"+result.address).length);
+				            console.log($("#my"+name[0]).length);
 				        }
 				        else{
 				        	console.log("change rssi");
-				        	$("#"+result.address+" #beaconRSSI").html(reason.rssi);
+				        	$("#my"+name[0]+" .beaconRSSI").html(result.rssi);
 				        }
+				        var scanBeacon = {beacon_Name: name[0], beacon_rssi: result.rssi}; 
+				        console.log("scanBeacon name: "+scanBeacon['beacon_Name']+" scanBeacon rssi: "+scanBeacon['beacon_rssi']);
+				        temp1 = scanBeacon;
+				        /**
+				         * 傳送beacon資料至server端php執行
+				         */
+				        
+				        /*$.ajax({
+				        	url: "http://140.130.35.62/csie40343142/Tour_System_server/php/userScanBeacon.php",
+				        	type: "POST",
+				        	dataType: "json",
+				        	data: scanBeacon,
+				        	success: function(result){
+				        		console.log("ajax transfer data success :" +result);
+				        	},
+				        	error: function(result){
+				        		console.log("ajax transfer data failed :"+result);
+				        	}
+				        });*/
 			        }
 			        dataNum+=1;
 			    }
 			},
 			function(error){},{services: []});
 
-		setTimeout(bluetoothle.stopScan, scanSeconds*1000, function(result){},function(error){});
+		setTimeout(bluetoothle.stopScan, scanSeconds*1000, function(result){
+			$.post("http://140.130.35.62/csie40343142/Tour_System_server/php/userScanBeacon.php",
+				        	temp1, function(res){console.log("res")}, "json");
+		},function(error){});
 		
 		/*ble.startScan([], function(device){
 			console.log("here is scan device!");

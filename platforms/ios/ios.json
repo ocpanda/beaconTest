@@ -7,19 +7,14 @@
         "files": {
             "config.xml": {
                 "parents": {
-                    "/widget": [
-                        {
-                            "xml": "<feature name=\"BLE\"><param name=\"ios-package\" onload=\"true\" value=\"BLECentralPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"cordova-plugin-beacon\"><param name=\"ios-package\" value=\"SimpleXpBeaconPlugin\" /></feature>",
-                            "count": 1
-                        }
-                    ],
+                    "/widget": [],
                     "/*": [
                         {
                             "xml": "<feature name=\"BluetoothLePlugin\"><param name=\"ios-package\" value=\"BluetoothLePlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -28,40 +23,18 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.ocpanda.test"
-        },
-        "cordova-plugin-ble-central": {
-            "PACKAGE_NAME": "com.ocpanda.test"
-        },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ocpanda.test"
         },
-        "cordova-plugin-beacon": {
+        "cordova-plugin-bluetoothle": {
             "PACKAGE_NAME": "com.ocpanda.test"
         },
-        "cordova-plugin-bluetoothle": {
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "com.ocpanda.test"
         }
     },
     "dependent_plugins": {},
     "modules": [
-        {
-            "file": "plugins/cordova-plugin-ble-central/www/ble.js",
-            "id": "cordova-plugin-ble-central.ble",
-            "pluginId": "cordova-plugin-ble-central",
-            "clobbers": [
-                "ble"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-beacon/www/client.js",
-            "id": "cordova-plugin-beacon.client",
-            "pluginId": "cordova-plugin-beacon",
-            "clobbers": [
-                "cordova.plugins.simplexpbeacon"
-            ]
-        },
         {
             "file": "plugins/cordova-plugin-bluetoothle/www/bluetoothle.js",
             "id": "cordova-plugin-bluetoothle.BluetoothLe",
@@ -69,13 +42,19 @@
             "clobbers": [
                 "window.bluetoothle"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "id": "cordova-plugin-device.device",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
+            ]
         }
     ],
     "plugin_metadata": {
-        "cordova-plugin-compat": "1.0.0",
-        "cordova-plugin-ble-central": "1.1.1",
         "cordova-plugin-whitelist": "1.2.2",
-        "cordova-plugin-beacon": "1.1.0",
-        "cordova-plugin-bluetoothle": "4.2.1"
+        "cordova-plugin-bluetoothle": "4.2.1",
+        "cordova-plugin-device": "1.1.2"
     }
 }

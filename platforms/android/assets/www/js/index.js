@@ -41,22 +41,7 @@ var app = {
         bluetoothle.initialize(function(result){
             console.log("bluetooth adapter status: "+result.status);
         }, { request: true, statusReceiver: false });
-        /*new Promise(function(resolve){
-            bluetoothle.initialize(resolve, { request: true, statusReceiver: false });
-        }).then(app.initializeSuccess, app.handleError);*/
-    },
-
-        /*ble.isEnabled(
-            function(){
-                console.log("Bluetooth is enabled!");
-            },
-            function(){
-                console.log("Bluetooth is not enabled!");
-                if(cordova.platformId == 'android'){
-                    ble.showBluetoothSettings();
-                }
-            }
-        );*/
+    }
 };
 
 app.initialize();

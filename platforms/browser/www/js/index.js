@@ -41,10 +41,6 @@ var app = {
         bluetoothle.initialize(function(result){
             console.log("bluetooth adapter status: "+result.status);
         }, { request: true, statusReceiver: false });
-        var aa="asddddd";
-        console.log($("#"+aa).length);
-        $(document.body).append("<p id="+aa+">"+"oggogogogogog"+"</p>");
-        console.log($("#"+aa).length);
         /*new Promise(function(resolve){
             bluetoothle.initialize(resolve, { request: true, statusReceiver: false });
         }).then(app.initializeSuccess, app.handleError);*/
