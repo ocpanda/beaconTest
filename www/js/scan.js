@@ -101,6 +101,14 @@ var scanapp = {
 			for(var i=0; i<10; i++){
 				console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1");
 			}
+			/**
+			 * 將beacon資料傳至server
+			 * @param  {[type]} result     server回傳資料
+			 * @param  {[type]} status){	                                                          		console.log("asdasdasdasd: "+result);	                                                                      		var a [description]
+			 * @param  {[type]} error:     function(XMLHttpRequest, textStatus, errorThrown){	                                               		console.log("XMLHttpRequest status:"+XMLHttpRequest.status);	                           		console.log("XMLHttpRequest readyStatus:"+XMLHttpRequest.readyState);	        		console.log("textStatus:"+textStatus);	        	}	        } [description]
+			 * @return {[type]}            失敗回傳XMLHttpRequest值供伺服器連線狀態參考
+			 *         					   textStatus顯示錯誤資訊
+			 */
 			$.ajax({
 	        	url: "http://140.130.35.62/csie40343142/Tour_System_server/php/userScanBeacon.php",
 	        	type: "POST",
