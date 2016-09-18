@@ -52,29 +52,40 @@
                     上方功能選單區塊
                     api: jquery.mobile-1.4.5.min.js
                 -->
-                <div role="main" class="ui-content">
-                    <div class="ui-grid-d" style="height:10%">
-                        <!-- 搜尋區塊 //-->
-                        <div class="ui-block-a" style="height:100%">
-                            <a href="search.html"><img style="width:100%;" src="image/search.png" is="image"></a>
-                        </div>
-                        <!-- 群組區塊 //-->
-                        <div class="ui-block-b" style="height:100%">
-                            <a href="group.html"><img style="width:100%;" src="image/group.png" is="image"></a>
-                        </div>
-                        <!-- 每日區塊 //-->
-                        <div class="ui-block-c" style="height:100%">
-                            <a href="home.html"><img style="width:100%;" src="image/home.png" is="image"></a>
-                        </div>
-                        <!-- 訊息區塊 //-->
-                        <div class="ui-block-d" style="height:100%">
-                            <a href="message.html"><img style="width:100%;" src="image/message.png" is="image"></a>
-                        </div>
-                        <!-- 設定區塊 //-->
-                        <div class="ui-block-e" style="height:100%">
-                            <a href="scan.html"><img style="width:100%;" src="image/setting.png" is="image"></a>
-                        </div>
+                <div data-role="header" data-position="fixed" data-fullscreen="true">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="search.html" data-transition="pop"><img style="width:90%;" src="image/search.png" is="image"></a></li>
+                            <li><a href="group.html" data-transition="pop"><img style="width:90%;" src="image/group.png" is="image"></a></li>
+                            <li><a href="home.html" data-transition="pop"><img style="width:90%;" src="image/home.png" is="image"></a></li>
+                            <li><a href="message.html" data-transition="pop"><img style="width:90%;" src="image/message.png" is="image"></a></li>
+                            <li><a href="scan.html" data-transition="pop"><img style="width:90%;" src="image/setting.png" is="image"></a></li>
+                        </ul>
                     </div>
+                    <!--<div role="main" class="ui-content">
+                        <div class="ui-grid-d" style="height:10%">
+                             搜尋區塊 
+                            <div class="ui-block-a" style="height:90%">
+                                <a href="search.html" data-transition="pop"><img style="width:90%;" src="image/search.png" is="image"></a>
+                            </div>
+                             群組區塊 
+                            <div class="ui-block-b" style="height:90%">
+                                <a href="group.html" data-transition="pop"><img style="width:90%;" src="image/group.png" is="image"></a>
+                            </div>
+                            每日區塊
+                            <div class="ui-block-c" style="height:90%">
+                                <a href="home.html" data-transition="pop"><img style="width:90%;" src="image/home.png" is="image"></a>
+                            </div>
+                             訊息區塊 
+                            <div class="ui-block-d" style="height:90%">
+                                <a href="message.html" data-transition="pop"><img style="width:90%;" src="image/message.png" is="image"></a>
+                            </div>
+                             設定區塊 
+                            <div class="ui-block-e" style="height:90%">
+                                <a href="scan.html" data-transition="pop"><img style="width:90%;" src="image/setting.png" is="image"></a>
+                            </div>
+                        </div>
+                    </div>//-->
                 </div>
             </div>
         </div>
