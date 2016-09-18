@@ -29,24 +29,53 @@
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <!-- 會有權限影響所以註解掉 //-->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
         <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <script src="web_api/jquery/jquery-2.2.4.js"></script>
+        <meta name="msapplication-tap-highlight" content="no">//-->
         <meta name="vi ewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="web_api/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="web_api/bootstrap/css/bootstrap-theme.min.css">
-        <script src="web_api/bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="web_api/jquery/jquery.mobile-1.4.5.min.css">
         <link rel="stylesheet" type="text/css" href="css/home.css">
-        <title>beacon test</title>
+
+        <script src="web_api/bootstrap/js/bootstrap.min.js"></script>
+        <script src="web_api/jquery/jquery-2.2.4.js"></script>
+        <script src="web_api/jquery/jquery.mobile-1.4.5.min.js"></script>
+        
+        <title>HakkaTourSystem</title>
     </head>
     <body>
         <div class="app">
-            <h1 id="topTitle">Beacon test</h1>
-            <div id="deviceready" class="blink">
-                <button type="button" class="btn btn-default btn0" ><a href="scan.html">scan beacon</a></button>
-
-                <button type="button" class="btn btn-default btn1"><a href="locate.html">locate</a></button>
+            <div id="home" data-role="page">
+                <!--
+                    上方功能選單區塊
+                    api: jquery.mobile-1.4.5.min.js
+                -->
+                <div role="main" class="ui-content">
+                    <div class="ui-grid-d" style="height:10%">
+                        <!-- 搜尋區塊 //-->
+                        <div class="ui-block-a" style="height:100%">
+                            <a href="search.html"><img style="width:100%;" src="image/search.png" is="image"></a>
+                        </div>
+                        <!-- 群組區塊 //-->
+                        <div class="ui-block-b" style="height:100%">
+                            <a href="group.html"><img style="width:100%;" src="image/group.png" is="image"></a>
+                        </div>
+                        <!-- 每日區塊 //-->
+                        <div class="ui-block-c" style="height:100%">
+                            <a href="home.html"><img style="width:100%;" src="image/home.png" is="image"></a>
+                        </div>
+                        <!-- 訊息區塊 //-->
+                        <div class="ui-block-d" style="height:100%">
+                            <a href="message.html"><img style="width:100%;" src="image/message.png" is="image"></a>
+                        </div>
+                        <!-- 設定區塊 //-->
+                        <div class="ui-block-e" style="height:100%">
+                            <a href="scan.html"><img style="width:100%;" src="image/setting.png" is="image"></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
