@@ -41,59 +41,103 @@
 
         <script src="web_api/bootstrap/js/bootstrap.min.js"></script>
         <script src="web_api/jquery/jquery-2.2.4.js"></script>
+        <script src="web_api/jquery/jquery-1.11.3.min.js"></script>
         <script src="web_api/jquery/jquery.mobile-1.4.5.min.js"></script>
-        <script src="web_api/jquery/requireJs/2.1.16/require.min.js"></script>
-        <script src="web_api/jquery/gk/jquery.gk.min.js"></script>
-        <script components="web_api/jquery/gk-ext/swiper-navbar-slide.html,web_api/jquery/gk-ext/swiper-navbar.html" callback="mobileInitPage" src="web_api/jquery/gk-loader/gk-loader.min.js"></script>
         <title>HakkaTourSystem</title>
     </head>
     <body>
         <div class="app">
-            <div id="home" data-role="page">
-                <!--
-                    上方功能選單區塊
-                    api: jquery.mobile-1.4.5.min.js
-                -->
-                <div data-role="header" data-position="fixed">
-                    <div is="swiper-navbar" data-slides-per-view="2">
-                        
-                            <div is="swiper-navbar-slide"><a href="search.html" data-transition="pop"><img style="width:90%;" src="image/search.png" is="image"></a></div>
-                            <div is="swiper-navbar-slide"><a href="search.html" data-transition="pop"><img style="width:90%;" src="image/search.png" is="image"></a></div>
-                            <div is="swiper-navbar-slide"><a href="search.html" data-transition="pop"><img style="width:90%;" src="image/search.png" is="image"></a></div>
-                            <div is="swiper-navbar-slide"><a href="group.html" data-transition="pop"><img style="width:90%;" src="image/group.png" is="image"></a></div>
-                            <div><a href="home.html" data-transition="pop"><img style="width:90%;" src="image/home.png" is="image"></a></div>
-                            <div is="swiper-navbar-slide"><a href="message.html" data-transition="pop"><img style="width:90%;" src="image/message.png" is="image"></a></div>
-                            <div is="swiper-navbar-slide"><a href="scan.html" data-transition="pop"><img style="width:90%;" src="image/setting.png" is="image"></a></div>
-                        
-                    </div>
-                    <!--<div role="main" class="ui-content">
-                        <div class="ui-grid-d" style="height:10%">
-                             搜尋區塊 
-                            <div class="ui-block-a" style="height:90%">
-                                <a href="search.html" data-transition="pop"><img style="width:90%;" src="image/search.png" is="image"></a>
-                            </div>
-                             群組區塊 
-                            <div class="ui-block-b" style="height:90%">
-                                <a href="group.html" data-transition="pop"><img style="width:90%;" src="image/group.png" is="image"></a>
-                            </div>
-                            每日區塊
-                            <div class="ui-block-c" style="height:90%">
-                                <a href="home.html" data-transition="pop"><img style="width:90%;" src="image/home.png" is="image"></a>
-                            </div>
-                             訊息區塊 
-                            <div class="ui-block-d" style="height:90%">
-                                <a href="message.html" data-transition="pop"><img style="width:90%;" src="image/message.png" is="image"></a>
-                            </div>
-                             設定區塊 
-                            <div class="ui-block-e" style="height:90%">
-                                <a href="scan.html" data-transition="pop"><img style="width:90%;" src="image/setting.png" is="image"></a>
-                            </div>
+            <div id="index" data-role="page">       
+                <div data-role="main" class="ui-content">
+                    <p>index</p>
+                    <!-- 搜尋彈出區塊 
+                        api: jquery-1.11.3.min.js
+                        api: jquery.mobile-1.4.5.min.js
+                    //-->
+                    <div data-role="popup" data-arrow="b" id="searchPopup">
+                        <div data-role="header">
+                            <h1>說明</h1>
                         </div>
-                    </div>//-->
+                        <div data-role="main" class="ui-content">
+                            <h1 align="center" valign="center">搜尋</h1>
+                            <p>使用此功能可以搜尋本展館之展物並進行導航。</p>
+                        </div>
+                    </div>
+                    <!-- 群組說明彈出區塊
+                        api: jquery-1.11.3.min.js
+                        api: jquery.mobile-1.4.5.min.js
+                    //-->
+                    <div data-role="popup" data-arrow="b" id="groupPopup">
+                        <div data-role="header">
+                            <h1>說明</h1>
+                        </div>
+                        <div data-role="main" class="ui-content">
+                            <h1 align="center" valign="center">群組</h1>
+                            <p>使用此功能可以加入或創建群組。</p>
+                        </div>
+                    </div>
+                    <!-- 每日說明彈出區塊
+                        api: jquery-1.11.3.min.js
+                        api: jquery.mobile-1.4.5.min.js
+                    //-->
+                    <div data-role="popup" data-arrow="b" id="dayPopup">
+                        <div data-role="header">
+                            <h1>說明</h1>
+                        </div>
+                        <div data-role="main" class="ui-content">
+                            <h1 align="center" valign="center">每日</h1>
+                            <p>使用此功能可以使用每日功能。</p>
+                        </div>
+                    </div>
+                    <!-- 訊息說明彈出區塊
+                        api: jquery-1.11.3.min.js
+                        api: jquery.mobile-1.4.5.min.js
+                    //-->
+                    <div data-role="popup" data-arrow="b" id="messagePopup">
+                        <div data-role="header">
+                            <h1>說明</h1>
+                        </div>
+                        <div data-role="main" class="ui-content">
+                            <h1 align="center" valign="center">訊息</h1>
+                            <p>使用此功能可以使用訊息功能。</p>
+                        </div>
+                    </div>
+                    <!-- 設定說明彈出區塊
+                        api: jquery-1.11.3.min.js
+                        api: jquery.mobile-1.4.5.min.js
+                    //-->
+                    <div data-role="popup" data-arrow="b" id="settingPopup">
+                        <div data-role="header">
+                            <h1>說明</h1>
+                        </div>
+                        <div data-role="main" class="ui-content">
+                            <h1 align="center" valign="center">設定</h1>
+                            <p>使用此功能可以設定功能。</p>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                    下方功能選單區塊
+                    api: jquery.mobile-1.4.5.min.js
+                    api: jquery-1.11.3.min.js
+                -->
+                <div data-role="footer" data-position="fixed" data-fullscreen="true">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="search.html" id="searchImg"><img style="width:90%;" src="image/search.png" is="image"></a></li>
+                            <li><a href="group.html" id="groupImg"><img style="width:90%;" src="image/group.png" is="image"></a></li>
+                            <li><a href="day.html"  id="dayImg"><img style="width:90%;" src="image/day.png" is="image"></a></li>
+                            <li><a href="message.html" id="messageImg"><img style="width:90%;" src="image/message.png" is="image"></a></li>
+                            <li><a href="scan.html" id="settingImg"><img style="width:90%;" src="image/setting.png" is="image"></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+
+        <script type="text/javascript" src="cordova.js" defer></script>
+        <script type="text/javascript" src="js/index.js" defer></script>
+        <script type="text/javascript" src="js/changePage.js" defer></script>
+        <script type="text/javascript" src="js/popupExplan.js" defer></script>
+    </body> 
 </html>
