@@ -12,11 +12,13 @@
         <script src="web_api/jquery/jquery-2.2.4.js"></script>
         <script src="web_api/jquery/jquery-1.11.3.min.js"></script>
         <script src="web_api/jquery/jquery.mobile-1.4.5.min.js"></script>
+
         <title>HakkaTourSystem</title>
     </head>
     <body>
         <div class="app">
             <div id="message" data-role="page">
+                <script type="text/javascript" src="js/popupExplan.js" defer></script>
                 <div data-role="content">
                     <p>message</p>
                     <!-- 首頁說明彈出區塊
@@ -84,6 +86,12 @@
                             <p>使用此功能可以設定功能。</p>
                         </div>
                     </div>
+                    <button id="test">按我</button>
+                    <script type="text/javascript">
+                        $("#test").click(function(){
+                            alert("asdsad");
+                        });
+                    </script>
                 </div>
                 <!--
                     下方功能選單區塊
@@ -95,7 +103,7 @@
                             <li><a href="index.html" id="homeImg"><img style="width:90%;" src="image/home.png" is="image"></a></li>
                             <li><a href="search.html" id="searchImg"><img style="width:90%;" src="image/search.png" is="image"></a></li>
                             <li><a href="group.html" id="groupImg"><img style="width:90%;" src="image/group.png" is="image"></a></li>
-                            <li><a href="day.html" id="day"><img style="width:90%;" src="image/day.png" is="image"></a></li>
+                            <li><a href="day.html" id="dayImg"><img style="width:90%;" src="image/day.png" is="image"></a></li>
                             <li><a href="scan.html" id="settingImg"><img style="width:90%;" src="image/setting.png" is="image"></a></li>
                         </ul>
                     </div>
@@ -106,6 +114,5 @@
         <script type="text/javascript" src="cordova.js" defer></script>
         <script type="text/javascript" src="js/index.js" defer></script>
         <script type="text/javascript" src="js/changePage.js" defer></script>
-        <script type="text/javascript" src="js/popupExplan.js" defer></script>
     </body>
 </html>
