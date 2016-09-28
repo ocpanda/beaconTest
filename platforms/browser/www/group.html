@@ -11,13 +11,30 @@
         <script src="web_api/bootstrap/js/bootstrap.min.js"></script>
         <script src="web_api/jquery/jquery-2.2.4.js"></script>
         <script src="web_api/jquery/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript">
+            $(document).on("mobileinit", function () {
+                        // Reference: http://jquerymobile.com/demos/1.1.0/docs/api/globalconfig.html
+                        $.extend($.mobile, {
+                            linkBindingEnabled: false,
+                            ajaxEnabled: false
+                        }); 
+             });
+        </script>
         <script src="web_api/jquery/jquery.mobile-1.4.5.min.js"></script>
 
         <title>HakkaTourSystem</title>
     </head>
     <body>
         <div class="app">
+            <div data-role="header" data-position="fixed" data-fullscreen="true">
+                        
+            </div>
+
             <div id="group" data-role="page">
+                
+                <!--
+                    下方功能選單區塊
+                -->
                 <div data-role="main" class="ui-content">
                     <p>group</p>
                     <!-- 首頁說明彈出區塊
@@ -92,9 +109,6 @@
                         });
                     </script>
                 </div>
-                <!--
-                    下方功能選單區塊
-                -->
                 <div data-role="footer" data-position="fixed" data-fullscreen="true">
                     <div data-role="navbar">
                         <ul>

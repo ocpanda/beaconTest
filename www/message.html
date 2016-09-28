@@ -11,6 +11,15 @@
         <script src="web_api/bootstrap/js/bootstrap.min.js"></script>
         <script src="web_api/jquery/jquery-2.2.4.js"></script>
         <script src="web_api/jquery/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript">
+            $(document).on("mobileinit", function () {
+                        // Reference: http://jquerymobile.com/demos/1.1.0/docs/api/globalconfig.html
+                        $.extend($.mobile, {
+                            linkBindingEnabled: false,
+                            ajaxEnabled: false
+                        }); 
+             });
+        </script>
         <script src="web_api/jquery/jquery.mobile-1.4.5.min.js"></script>
 
         <title>HakkaTourSystem</title>
@@ -112,7 +121,7 @@
 
         <script type="text/javascript" src="cordova.js" defer></script>
         <script type="text/javascript" src="js/index.js" defer></script>
-        <!-- <script type="text/javascript" src="js/changePage.js" defer></script>//-->
+        <script type="text/javascript" src="js/changePage.js" defer></script>
         <script type="text/javascript" src="js/popupExplan.js" defer></script>
     </body>
 </html>
