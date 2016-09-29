@@ -8,8 +8,7 @@ $(document).on("pageshow", function(){
 	pageTopBKColorInit();
 	pageRender();
 	$.get("group.html", function(data){
-		//指定回傳頁面的區塊更新本頁面區塊內容
-		$("#groupMainContent").html($(data).find("#List").html()); 
+		$("#groupMainContent").html($(data).find("#List").html());
 	});
 });
 
