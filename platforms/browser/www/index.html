@@ -48,10 +48,8 @@
     </head>
     <body>
         <div class="app">
-            <!--
-                主頁
-            //-->
-            <div id="home" data-role="page">       
+            <!--主頁//-->
+            <div id="home" data-role="page">
                 <div data-role="main" class="ui-content">
                     <p>index</p>
                     <!-- 搜尋彈出區塊 
@@ -136,7 +134,7 @@
                     <div data-role="navbar">
                         <ul id="homefootNavBar">
                             <li><a href="#search" id="searchImg" data-ajax="false"><img style="width:90%;" src="image/search.png" is="image"></a></li>
-                            <li><a href="#group" id="groupImg" data-ajax="false"><img style="width:90%;" src="image/group.png" is="image"></a></li>
+                            <li><a href="#group" id="groupImg" rel="external"><img style="width:90%;" src="image/group.png" is="image"></a></li>
                             <li><a href="#day"  id="dayImg" data-ajax="false"><img style="width:90%;" src="image/day.png" is="image"></a></li>
                             <li><a href="#message" id="messageImg" data-ajax="false"><img style="width:90%;" src="image/message.png" is="image"></a></li>
                             <li><a href="#scan" id="settingImg" data-ajax="false"><img style="width:90%;" src="image/setting.png" is="image"></a></li>
@@ -145,9 +143,7 @@
                 </div>
             </div>
 
-            <!--
-                搜尋頁
-            //-->
+            <!--搜尋頁//-->
             <div id="search" data-role="page">
                 <div data-role="main" class="ui-content">
                     <p>search</p>
@@ -229,7 +225,7 @@
                 <div data-role="footer" data-position="fixed" data-fullscreen="true">
                     <div data-role="navbar">
                         <ul id="searchfootNavBar">
-                            <li><a href="#index" id="homeImg" data-ajax="false"><img style="width:90%;" src="image/home.png" is="image"></a></li>
+                            <li><a href="#home" id="homeImg" data-ajax="false"><img style="width:90%;" src="image/home.png" is="image"></a></li>
                             <li><a href="#group" id="groupImg" data-ajax="false"><img style="width:90%;" src="image/group.png" is="image"></a></li>
                             <li><a href="#day" id="dayImg" data-ajax="false"><img style="width:90%;" src="image/day.png" is="image"></a></li>
                             <li><a href="#message" id="messageImg" data-ajax="false"><img style="width:90%;" src="image/message.png" is="image"></a></li>
@@ -239,13 +235,9 @@
                 </div>
             </div>
 
-            <!--
-                群組頁
-            //-->
+            <!--群組頁//-->
             <div id="group" data-role="page">
-                <!--
-                    上方功能選單區塊
-                -->
+                <!--上方功能選單區塊-->
                 <div data-role="header" data-position="fixed">
                     <div data-role="navbar">
                         <ul>
@@ -255,14 +247,10 @@
                         </ul>
                     </div>
                 </div>
-                <!--
-                    主要內容 用ajax注入內容
-                //-->
+                <!--主要內容 用ajax注入內容//-->
                 <div data-role="main" class="ui-content" id="groupMainContent">
                 </div>
-                <!--
-                    下方功能選單區塊
-                -->
+                <!--下方功能選單區塊-->
                 <div data-role="main" class="ui-content">
                     <!-- 首頁說明彈出區塊
                         api: jquery-1.11.3.min.js
@@ -333,7 +321,7 @@
                 <div data-role="footer" data-position="fixed" data-fullscreen="true">
                     <div data-role="navbar">
                         <ul class="footNavBar">
-                            <li><a href="#index" id="homeImg" data-ajax="false"><img style="width:90%;" src="image/home.png" is="image"></a></li>
+                            <li><a href="#home" id="homeImg" data-ajax="false"><img style="width:90%;" src="image/home.png" is="image"></a></li>
                             <li><a href="#search" id="searchImg" data-ajax="false"><img style="width:90%;" src="image/search.png" is="image"></a></li>
                             <li><a href="#day" id="dayImg" data-ajax="false"><img style="width:90%;" src="image/day.png" is="image"></a></li>
                             <li><a href="#message" id="messageImg" data-ajax="false"><img style="width:90%;" src="image/message.png" is="image"></a></li>
@@ -344,13 +332,9 @@
                 <script type="text/javascript" src="js/groupPage.js"></script>
             </div>
 
-            <!--
-                日常頁
-            //-->
+            <!--日常頁//-->
             <div id="day" data-role="page">
-                <!--
-                    下方功能選單區塊
-                -->
+                <!--下方功能選單區塊-->
                 <div data-role="main" class="ui-content">
                     <p>day</p>
                     <!-- 首頁說明彈出區塊
@@ -428,7 +412,7 @@
                 <div data-role="footer" data-position="fixed" data-fullscreen="true">
                     <div data-role="navbar">
                         <ul class="footNavBar">
-                            <li><a href="#index" id="homeImg" data-ajax="false"><img style="width:90%;" src="image/home.png" is="image"></a></li>
+                            <li><a href="#home" id="homeImg" data-ajax="false"><img style="width:90%;" src="image/home.png" is="image"></a></li>
                             <li><a href="#search" id="searchImg" data-ajax="false"><img style="width:90%;" src="image/search.png" is="image"></a></li>
                             <li><a href="#group" id="groupImg" data-ajax="false"><img style="width:90%;" src="image/group.png" is="image"></a></li>
                             <li><a href="#message" id="messageImg" data-ajax="false"><img style="width:90%;" src="image/message.png" is="image"></a></li>
@@ -438,9 +422,7 @@
                 </div>
             </div>
 
-            <!--
-                訊息頁
-            //-->
+            <!--訊息頁//-->
             <div id="message" data-role="page">
                 <!--
                     下方功能選單區塊
@@ -523,7 +505,7 @@
                 <div data-role="footer" data-position="fixed" data-fullscreen="true">
                     <div data-role="navbar">
                         <ul class="footNavBar">
-                            <li><a href="#index" id="homeImg" data-ajax="false"><img style="width:90%;" src="image/home.png" is="image"></a></li>
+                            <li><a href="#home" id="homeImg" data-ajax="false"><img style="width:90%;" src="image/home.png" is="image"></a></li>
                             <li><a href="#search" id="searchImg" data-ajax="false"><img style="width:90%;" src="image/search.png" is="image"></a></li>
                             <li><a href="#group" id="groupImg" data-ajax="false"><img style="width:90%;" src="image/group.png" is="image"></a></li>
                             <li><a href="#day" id="dayImg" data-ajax="false"><img style="width:90%;" src="image/day.png" is="image"></a></li>
@@ -533,9 +515,7 @@
                 </div>
             </div>
 
-            <!--
-                設定頁
-            //-->
+            <!--設定頁//-->
             <div id="message" data-role="page">
                 <!--
                     下方功能選單區塊
@@ -633,7 +613,7 @@
                 <div data-role="footer" data-position="fixed" data-fullscreen="true">
                     <div data-role="navbar" class="footNavBar">
                         <ul class="footNavBar">
-                            <li><a href="#index" id="homeImg" data-ajax="false"><img style="width:90%;" src="image/home.png" is="image"></a></li>
+                            <li><a href="#home" id="homeImg" data-ajax="false"><img style="width:90%;" src="image/home.png" is="image"></a></li>
                             <li><a href="#search" id="searchImg" data-ajax="false"><img style="width:90%;" src="image/search.png" is="image"></a></li>
                             <li><a href="#group" id="groupImg" data-ajax="false"><img style="width:90%;" src="image/group.png" is="image"></a></li>
                             <li><a href="#day" id="dayImg" data-ajax="false"><img style="width:90%;" src="image/day.png" is="image"></a></li>

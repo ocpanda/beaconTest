@@ -7,8 +7,19 @@ var nowPage = 0;
 $(document).on("pageshow", function(){
 	pageTopBKColorInit();
 	pageRender();
-	$.get("group.html", function(data){
-		$("#groupMainContent").html($(data).find("#List").html());
+	$.ajax({
+		type:"GET",
+		url:"group.html",
+		async:false,
+		dataType:"html",
+		success: function(data){
+			$("#groupMainContent").html($(data).find(pages[0]).html());
+		},
+    	error: function(XMLHttpRequest, textStatus, errorThrown){
+    		console.log("XMLHttpRequest status:"+XMLHttpRequest.status);
+    		console.log("XMLHttpRequest readyStatus:"+XMLHttpRequest.readyState);
+    		console.log("textStatus:"+textStatus);
+    	}
 	});
 });
 
@@ -42,7 +53,7 @@ function pageTopBKColorInit(){
 }
 
 /**
- * [pageRender 畫面渲染]
+ * [pageRender 上方工具列渲染]
  */
 function pageRender(){
 	switch(nowPage){
@@ -65,7 +76,9 @@ function pageRender(){
  */
 function htmlInject(){
 	$.ajax({
+		type:"GET",
 		url:"group.html",
+		async:false,
 		dataType:"html",
 		success: function(data){
 			$("#groupMainContent").html($(data).find(pages[nowPage]).html());
