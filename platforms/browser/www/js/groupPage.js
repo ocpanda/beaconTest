@@ -4,49 +4,39 @@
 var pages = ["#List", "#Make", "#Add"];
 var nowPage = 0;
 
-$(document).on("pageshow", function(){
+$(document).on("pageshow", "#group",function(){
 	pageTopBKColorInit();
 	pageRender();
-	$.ajax({
-		type:"GET",
-		url:"group.html",
-		async:false,
-		dataType:"html",
-		success: function(data){
-			$("#groupMainContent").html($(data).find(pages[0]).html());
-		},
-    	error: function(XMLHttpRequest, textStatus, errorThrown){
-    		console.log("XMLHttpRequest status:"+XMLHttpRequest.status);
-    		console.log("XMLHttpRequest readyStatus:"+XMLHttpRequest.readyState);
-    		console.log("textStatus:"+textStatus);
-    	}
-	});
+	$("#List").show();
 });
 
 $("#groupListBtn").on("click", function(){
 	nowPage = 0;
 	pageTopBKColorInit();
 	pageRender();
-	htmlInject();
+	htmlShow();
 });
 
 $("#groupMakeBtn").on("click", function(){
 	nowPage = 1;
 	pageTopBKColorInit();
 	pageRender();
-	htmlInject();
+	htmlShow();
 });
 
 $("#groupAddBtn").on("click", function(){
 	nowPage = 2;
 	pageTopBKColorInit();
 	pageRender();
-	htmlInject();
+	htmlShow();
 });
 /**
  * [pageTopBKColorInit 將上方工具列選項顏色初始化]
  */
 function pageTopBKColorInit(){
+	$("#List").hide();
+	$("#Make").hide();
+	$("#Add").hide();
 	$("#groupListBtn").css("background", "white");
 	$("#groupMakeBtn").css("background", "white");
 	$("#groupAddBtn").css("background", "white");
@@ -72,21 +62,8 @@ function pageRender(){
 }
 
 /**
- * [htmlInject ajax注入html內容至頁面]
+ * [htmlShow 將切換到頁面之隱藏div顯示]
  */
-function htmlInject(){
-	$.ajax({
-		type:"GET",
-		url:"group.html",
-		async:false,
-		dataType:"html",
-		success: function(data){
-			$("#groupMainContent").html($(data).find(pages[nowPage]).html());
-		},
-    	error: function(XMLHttpRequest, textStatus, errorThrown){
-    		console.log("XMLHttpRequest status:"+XMLHttpRequest.status);
-    		console.log("XMLHttpRequest readyStatus:"+XMLHttpRequest.readyState);
-    		console.log("textStatus:"+textStatus);
-    	}
-	});
+function htmlShow(){
+	$(pages[nowPage]).show();
 }
