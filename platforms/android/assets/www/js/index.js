@@ -49,6 +49,7 @@ var app = {
             }
         );
     }
+    
 };
 
 app.initialize();
