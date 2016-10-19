@@ -37,7 +37,16 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        ble.isEnabled(
+        console.log("Bluetooth initialize");
+        bluetoothle.initialize(function(result){
+            console.log("bluetooth adapter status: "+result.status);
+        }, { request: true, statusReceiver: false });
+        /*new Promise(function(resolve){
+            bluetoothle.initialize(resolve, { request: true, statusReceiver: false });
+        }).then(app.initializeSuccess, app.handleError);*/
+    },
+
+        /*ble.isEnabled(
             function(){
                 console.log("Bluetooth is enabled!");
             },
@@ -47,9 +56,13 @@ var app = {
                     ble.showBluetoothSettings();
                 }
             }
+<<<<<<< HEAD
         );
     }
     
+=======
+        );*/
+>>>>>>> d3844d4c7e1211367614b380a78463cc8f2e1708
 };
 
 app.initialize();

@@ -37,17 +37,10 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        ble.isEnabled(
-            function(){
-                console.log("Bluetooth is enabled!");
-            },
-            function(){
-                console.log("Bluetooth is not enabled!");
-                if(cordova.platformId == 'android'){
-                    ble.showBluetoothSettings();
-                }
-            }
-        );
+        console.log("Bluetooth initialize");
+        bluetoothle.initialize(function(result){
+            console.log("bluetooth adapter status: "+result.status);
+        }, { request: true, statusReceiver: false });
     }
     
 };
