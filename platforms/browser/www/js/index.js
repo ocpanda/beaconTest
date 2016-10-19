@@ -42,7 +42,6 @@ var app = {
             console.log("bluetooth adapter status: "+result.status);
         }, { request: true, statusReceiver: false });
     }
-    
 };
 
 app.initialize();
