@@ -16,7 +16,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <preference name="orientation" value="portrait" />
+    <preference name="orientation" value="portrait" />  <!--鎖定手機畫面轉向 -->
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>

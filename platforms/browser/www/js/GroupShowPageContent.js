@@ -1,12 +1,13 @@
 /**
  * 群組頁面畫面渲染
  */
-var pages = ["#List", "#Make", "#Add"];
+var pages = ["#List", "#Make"];
 var nowPage = 0;
 
 $(document).on("pageshow", "#group",function(){
 	pageTopBKColorInit();
 	pageRender();
+	showGroupList();	//in GroupShowPageListContent.js
 	$("#List").show();
 });
 
@@ -24,12 +25,6 @@ $("#groupMakeBtn").on("click", function(){
 	htmlShow();
 });
 
-$("#groupAddBtn").on("click", function(){
-	nowPage = 2;
-	pageTopBKColorInit();
-	pageRender();
-	htmlShow();
-});
 /**
  * [pageTopBKColorInit 將上方工具列選項顏色初始化]
  */
@@ -39,7 +34,6 @@ function pageTopBKColorInit(){
 	$("#Add").hide();
 	$("#groupListBtn").css("background", "white");
 	$("#groupMakeBtn").css("background", "white");
-	$("#groupAddBtn").css("background", "white");
 }
 
 /**
@@ -53,10 +47,6 @@ function pageRender(){
 
 		case 1:
 			$("#groupMakeBtn").css("background", "#6666FF");
-			break;
-
-		case 2:
-			$("#groupAddBtn").css("background", "#6666FF");
 			break;
 	}
 }

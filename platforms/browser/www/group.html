@@ -1,5 +1,6 @@
 <!--群組頁//-->          
 <div data-role="page" id="group">
+    <link rel="stylesheet" type="text/css" href="css/group.css">
     <link rel="stylesheet" href="web_api/jquery/jquery.mobile-1.4.5.min.css">
     <script src="web_api/jquery/jquery-1.11.3.min.js"></script>
     <script src="web_api/jquery/jquery.mobile-1.4.5.min.js"></script>
@@ -10,7 +11,6 @@
             <ul>
                 <li><button id="groupListBtn">群組列表</button></li>
                 <li><button id="groupMakeBtn">創建列表</button></li>
-                <li><button id="groupAddBtn">加入列表</button></li>
             </ul>
         </div>
     </div>
@@ -33,12 +33,19 @@
 
         <!--創建群組//-->
         <div id="Make">
-            <p>Make page</p>
-        </div>
-
-        <!--加入群組//-->
-        <div id="Add">
-            <p>ADD page</p>
+            <div class="ui-field-contain">
+                <label for="groupName" style="font-size:20px;">群組名稱：</label>
+                <input type="text" name="groupName" id="groupName" placeholder="輸入您想要的群組名稱。">
+            </div>
+            <div class="ui-field-contain">
+                <label for="groupOpen" style="font-size:20px;">權限：</label>
+                <input type="checkbox" data-role="flipswitch" name="groupOpen" id="groupOpen" data-on-text="公開" data-off-text="私人">
+            </div>
+            <center>
+                <div id="submitBtn">
+                    <button data-inline="true">建立</button>
+                </div>
+            </center>
         </div>
     </div>
     <!--下方功能選單區塊-->
@@ -120,5 +127,7 @@
             </ul>
         </div>
     </div>
-    <script type="text/javascript" src="js/groupPage.js"></script>
+    <script type="text/javascript" src="js/GroupShowPageContent.js"></script>
+    <script type="text/javascript" src="js/GroupShowPageListContent.js"></script>
+    <script type="text/javascript" src="js/popupExplan.js" defer></script>
 </div>
