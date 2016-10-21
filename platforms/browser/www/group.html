@@ -39,7 +39,10 @@
             </div>
             <div class="ui-field-contain">
                 <label for="groupOpen" style="font-size:20px;">權限：</label>
-                <input type="checkbox" data-role="flipswitch" name="groupOpen" id="groupOpen" data-on-text="公開" data-off-text="私人">
+                <select id="select-based-flipswitch" data-role="flipswitch" name="groupOpen" id="groupOpen">
+                    <option value="off">私人</option>
+                    <option value="on">公開</option>
+                </select>
             </div>
             <center>
                 <div id="submitBtn">
@@ -129,5 +132,6 @@
     </div>
     <script type="text/javascript" src="js/GroupShowPageContent.js"></script>
     <script type="text/javascript" src="js/GroupShowPageListContent.js"></script>
+    <script type="text/javascript" src="js/GroupPageMake.js"></script>
     <script type="text/javascript" src="js/popupExplan.js" defer></script>
 </div>

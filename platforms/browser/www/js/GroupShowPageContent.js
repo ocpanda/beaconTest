@@ -7,7 +7,6 @@ var nowPage = 0;
 $(document).on("pageshow", "#group",function(){
 	pageTopBKColorInit();
 	pageRender();
-	showGroupList();	//in GroupShowPageListContent.js
 	$("#List").show();
 });
 
@@ -31,7 +30,6 @@ $("#groupMakeBtn").on("click", function(){
 function pageTopBKColorInit(){
 	$("#List").hide();
 	$("#Make").hide();
-	$("#Add").hide();
 	$("#groupListBtn").css("background", "white");
 	$("#groupMakeBtn").css("background", "white");
 }
