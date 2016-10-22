@@ -7,6 +7,7 @@ var nowPage = 0;
 $(document).on("pageshow", "#group",function(){
 	pageTopBKColorInit();
 	pageRender();
+	//showGroupList();
 	$("#List").show();
 });
 
